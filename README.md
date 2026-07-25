@@ -19,9 +19,9 @@
 
 [Pflichtangaben in e2-config.ini - Channels]
 - Programmkanäle werde nicht per Name sondern per ChannelId aufgelöst
-  Auslesen per Aufruf von 'http://192.1.2.3:80/api/getallservices'
-  Übertragen aller gewünschten Kanäle in den Channels Abschnitt - Beispiel 'Das Erste HD=1:0:12:3456:789:1:FFFF0000:0:0:0:'
-  Hinweis: Eintragen der exakt gleichen Namen in die Aufnahmesteuerung notwendig
+- Auslesen per Aufruf von 'http://192.1.2.3:80/api/getallservices'
+- Übertragen aller gewünschten Kanäle in den Channels Abschnitt - Beispiel 'Das Erste HD=1:0:12:3456:789:1:FFFF0000:0:0:0:'
+- Hinweis: Eintragen der exakt gleichen Kanal-Namen in die Aufnahmesteuerung notwendig
 
 [Aufruf aus der Aufnahmesteuerung im TV-Browser]
 
