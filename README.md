@@ -1,9 +1,9 @@
 [Kurzes HowTo:]
 
-Anpassen der e2-config.ini an die eigene Infrastruktur
-Ablegen der e2.ps1 sowie der e2-config.ini unter 'C:\Program Files\TV-Browser'
-Zuweisen der Programmekanalnamen in die Aufnahmesteuerung
-e2.ps1 Skript aus dem Aufnahmesteuerung-Plugin mittles Powershell.exe aufrufen
+1. Anpassen der e2-config.ini an die eigene Infrastruktur
+2. Ablegen der e2.ps1 sowie der e2-config.ini unter 'C:\Program Files\TV-Browser'
+3. Zuweisen der Programmekanalnamen in die Aufnahmesteuerung
+4. e2.ps1 Skript aus dem Aufnahmesteuerung-Plugin mittles Powershell.exe aufrufen
 
 [Pflichtangaben in e2-config.ini - Receiver]
 - IP und Port vom Enigma2 Server in url eintragen - Beispiel 'url=http://192.1.2.3:80'
