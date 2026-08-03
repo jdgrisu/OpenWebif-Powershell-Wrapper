@@ -81,12 +81,30 @@ function Init {
         throw "Missing [Receiver] section."
     }
 
+    if (-not $script:Config.ContainsKey("Timer")) {
+        throw "Missing [Timer] section in e2-config.ini."
+    }
+
+    if (-not $script:Config.ContainsKey("System")) {
+        throw "Missing [System] section in e2-config.ini."
+    }
+
     if (-not $script:Config.ContainsKey("Channels")) {
         throw "Missing [Channels] section."
     }
 
-    $script:BaseUrl = $script:Config.Receiver.Host.TrimEnd("/")
+    $script:LogFile = [Environment]::ExpandEnvironmentVariables($script:Config.System.logfile)
 
+    if ([string]::IsNullOrWhiteSpace($script:LogFile)) {
+        $script:LogFile = "$PSScriptRoot\e2.log"
+    }
+
+    if ([string]::IsNullOrWhiteSpace($script:Config.Receiver.Host)) {
+        throw "Receiver.Host missing."
+    }
+
+    $script:BaseUrl = $script:Config.Receiver.Host.TrimEnd("/")
+    
     if ($script:BaseUrl -notmatch "^http") {
         $script:BaseUrl = "http://$script:BaseUrl"
     }
@@ -95,13 +113,11 @@ function Init {
         throw "Receiver.Host missing."
     }
 
-    $script:LogFile = $script:Config.System.logfile
-
-    if ([string]::IsNullOrWhiteSpace($script:LogFile)) {
-        $script:LogFile = "$PSScriptRoot\e2.log"
+    [int]$tmp = 180
+    if (-not [int]::TryParse($script:Config.System.epg_tolerance, [ref]$tmp)) {
+        $tmp = 180
     }
-
-    $script:Tolerance = [int]$script:Config.System.epg_tolerance
+    $script:Tolerance = [Math]::Max(0, $tmp)
 
     if ($script:Tolerance -lt 0) {
         $script:Tolerance = 180
@@ -122,10 +138,15 @@ function Init {
 
     $dir = Split-Path $script:LogFile
 
-    if (!(Test-Path $dir)) {
-        New-Item -ItemType Directory -Force -Path $dir | Out-Null
+    try {
+        if (-not (Test-Path -LiteralPath $dir)) {
+            New-Item -ItemType Directory -Force -Path $dir -ErrorAction Stop | Out-Null
+        }
+    } catch {
+        throw "Cannot create log directory '$dir'."
     }
-
+    Write-Log ("Use Logfile: dir={0} level='{1}'" -f $dir, $level) "DEBUG"
+    
     Write-Log "Configuration loaded." "DEBUG"
 }
 
