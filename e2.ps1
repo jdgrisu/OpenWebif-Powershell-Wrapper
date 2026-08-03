@@ -604,7 +604,7 @@ try {
                 Write-Log ("EPG event found: id={0} title='{1}'" -f $epgEvent.id, $epgEvent.title) "DEBUG"
         
                 #kein Padding berechnen (macht Enigma2).
-                $result = New-RecordingByEventId -sRef $epgEvent.sref -eventId $epgEvent.id
+                $result = New-RecordingByEventId -sRef $epgEvent.sref -epgEventId $epgEvent.id
         
                 if ($result.PSObject.Properties.Match("message").Count) {
                     Write-Log $result.message "INFO"
