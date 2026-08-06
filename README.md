@@ -39,8 +39,7 @@ powershell.exe -Executionpolicy Bypass -File "e2.ps1" -Action "delete" -channel_
 
 [Vorlagen für TV-Browser - Aufnahmesteuerung für den Zugriff auf Enigma2-Receivern]
 
-Aufnamesteuerung - Einstellungen - Gerät importieren
-e2-Auto.tcf und e2-DeepStandby.tcf
+Aufnamesteuerung - Einstellungen - Gerät importieren - e2-Auto.tcf oder e2-DeepStandby.tcf wählen
 
 [Infos zur OpenWebif-API auf Enigma2-Receivern]
 
