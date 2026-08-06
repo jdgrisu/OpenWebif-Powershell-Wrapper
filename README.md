@@ -14,7 +14,7 @@
 
 [Pflichtangaben in e2-config.ini - System]
 - Den Loglevel festlegen - Zulässige Werte sind 'DEBUG', 'INFO', 'WARN', 'ERROR' - Beispiel 'loglevel=INFO'
-- Den Ort der Logfile festlegen - Beispiel 'logfile=C:\Users\Grisu\AppData\Roaming\TV-Browser\e2.log'
+- Den Ort der Logfile festlegen - Beispiel 'logfile=%APPDATA%\TV-Browser\e2.log'
 - Für die EPG-Suche die EPG Tolerance in Sekunden anpassen - Beispiel 'epg_tolerance=180'
 
 [Pflichtangaben in e2-config.ini - Channels]
