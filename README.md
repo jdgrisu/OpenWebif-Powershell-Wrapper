@@ -28,6 +28,8 @@
 Aufnahmesteuerung ADD-Eingabe:
 powershell.exe -ExecutionPolicy Bypass -File "e2.ps1" -Action add -channel_name "{channel_name_external}" -title "{title}" -start_unix {start_unix} -end_unix {end_unix} -description "{maxlength(replace(replace(replace(cleanLess(description), "_______::_,______::_,_____::_,____::_,___::_,__::_"), "_:: "), " TV Browser:: "), "1023")}" -AfterEvent "2"
 
+HINWEIS: Die Darstellung von mehreren Unterstrichen wird von github zusammengefasst und somit ist die Darstellung falsch. Erst in der Edit Darstellung werden die Infos korrekt angezeigt. Daher wird hilfweise in die Aufnahmesteuerung importierbare tcf-Dateien bereitgestellt.
+
 Aufnahmesteuerung ADD-Beispiel:
 powershell.exe -ExecutionPolicy Bypass -File "e2.ps1" -Action add -channel_name "Das Erste HD" -title "Tagesschau" -start_unix 1784570400 -end_unix 1784571300 -description "Die Nachrichten der ARD by DasErste" -AfterEvent "2"
 
