@@ -37,6 +37,11 @@ powershell.exe -Executionpolicy Bypass -File "e2.ps1" -Action "delete" -channel_
 Aufnahmesteuerung DELETE-Eingabe:
 powershell.exe -Executionpolicy Bypass -File "e2.ps1" -Action "delete" -channel_name "Das Erste HD" -title "Tagesschau" -start_unix 1784570400
 
+[Vorlagen für TV-Browser - Aufnahmesteuerung für den Zugriff auf Enigma2-Receivern]
+
+Aufnamesteuerung - Einstellungen - Gerät importieren
+e2-Auto.tcf und e2-DeepStandby.tcf
+
 [Infos zur OpenWebif-API auf Enigma2-Receivern]
 
 https://github.com/E2OpenPlugins/e2openplugin-OpenWebif/wiki/OpenWebif-API-documentation
